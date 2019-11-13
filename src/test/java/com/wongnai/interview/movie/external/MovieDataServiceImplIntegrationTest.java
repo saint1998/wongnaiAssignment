@@ -1,5 +1,6 @@
 package com.wongnai.interview.movie.external;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Optional;
 
@@ -18,13 +19,13 @@ public class MovieDataServiceImplIntegrationTest {
 	private MovieDataServiceImpl movieDataService;
 
 	@Test
-	public void testFetchAll() {
+	public void testFetchAll() throws IOException {
 		MoviesResponse result = movieDataService.fetchAll();
 		Assert.assertThat(result.size(), Matchers.equalTo(28795));
 	}
 
 	@Test
-	public void testMappingDataCorrectly() {
+	public void testMappingDataCorrectly() throws IOException {
 		MoviesResponse result = movieDataService.fetchAll();
 		Optional<MovieData> afterDark = result.stream()
 				.filter(m -> m.getTitle().equals("One Night in Rome"))
