@@ -1,5 +1,6 @@
 package com.wongnai.interview.movie.search;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.hamcrest.Matchers;
@@ -20,7 +21,7 @@ public class SimpleMovieSearchServiceIntegrationTest {
 	private SimpleMovieSearchService searchService;
 
 	@Test
-	public void testFindSingleKeywordContainInTitle() {
+	public void testFindSingleKeywordContainInTitle() throws IOException {
 		List<Movie> result = searchService.search("Glorious");
 
 		assertGloriousMovieKeyword(result);
@@ -39,28 +40,28 @@ public class SimpleMovieSearchServiceIntegrationTest {
 	}
 
 	@Test
-	public void testPartialWordMustNotMatch() {
+	public void testPartialWordMustNotMatch() throws IOException {
 		List<Movie> result = searchService.search("Glorio");
 
 		Assert.assertThat(result.size(), Matchers.equalTo(0));
 	}
 
 	@Test
-	public void testFullMovieNameMustNotMatch() {
+	public void testFullMovieNameMustNotMatch() throws IOException {
 		List<Movie> result = searchService.search("The Glorious Lady");
 
 		Assert.assertThat(result.size(), Matchers.equalTo(0));
 	}
 
 	@Test
-	public void testMultiWordMustNotMatch() {
+	public void testMultiWordMustNotMatch() throws IOException {
 		List<Movie> result = searchService.search("Glorio Lady");
 
 		Assert.assertThat(result.size(), Matchers.equalTo(0));
 	}
 
 	@Test
-	public void testFindSingleKeywordContainInTitleWithCaseInsensitive() {
+	public void testFindSingleKeywordContainInTitleWithCaseInsensitive() throws IOException {
 		List<Movie> result = searchService.search("glorious");
 
 		assertGloriousMovieKeyword(result);

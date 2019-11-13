@@ -32,10 +32,10 @@ public class MovieDataServiceImpl implements MovieDataService {
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<String> response = restTemplate.getForEntity(MOVIE_DATA_URL,String.class);
 
+
 		ObjectMapper objectMapper = new ObjectMapper();
-		MoviesResponse root = objectMapper.readValue(response.getBody(),MoviesResponse.class);
+		MoviesResponse moviesResponse = objectMapper.readValue(response.getBody(),MoviesResponse.class);
 
-
-		return root;
+		return moviesResponse;
 	}
 }

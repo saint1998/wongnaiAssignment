@@ -1,5 +1,6 @@
 package com.wongnai.interview.movie;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class MoviesController {
 	}
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public List<Movie> searchTitleWithKeyword(@RequestParam("q") String keyword) {
+	public List<Movie> searchTitleWithKeyword(@RequestParam("q") String keyword) throws IOException {
 		return movieSearchService.search(keyword);
 	}
 }
