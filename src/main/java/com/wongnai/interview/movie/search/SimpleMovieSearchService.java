@@ -41,12 +41,11 @@ public class SimpleMovieSearchService implements MovieSearchService {
 			String title = movie.getTitle();
 			Matcher matcher = pattern.matcher(title);
 			if(matcher.find()){
-				Movie m = new Movie(title);
-				m.setActors(movie.getCast());
+				Movie m = new Movie(title,movie.getCast());
 				result.add(m);
 			}
 		}
-		
+
 		return result;
 	}
 }
