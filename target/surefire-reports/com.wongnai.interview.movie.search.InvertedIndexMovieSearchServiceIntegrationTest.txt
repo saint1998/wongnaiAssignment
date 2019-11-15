@@ -1,0 +1,41 @@
+-------------------------------------------------------------------------------
+Test set: com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.105 s <<< FAILURE! - in com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest
+testFindSingleKeywordContainInTitleWithCaseInsensitive(com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest)  Time elapsed: 0.024 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: <7>
+     but: was <14>
+	at com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest.assertGloriousMovieKeyword(InvertedIndexMovieSearchServiceIntegrationTest.java:37)
+	at com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest.testFindSingleKeywordContainInTitleWithCaseInsensitive(InvertedIndexMovieSearchServiceIntegrationTest.java:33)
+
+testMultiKeywordsMustFoundMoviesContainAllOfKeywords(com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest)  Time elapsed: 0.012 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: <2>
+     but: was <4>
+	at com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest.testMultiKeywordsMustFoundMoviesContainAllOfKeywords(InvertedIndexMovieSearchServiceIntegrationTest.java:67)
+
+testFindSingleKeywordContainInTitle(com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest)  Time elapsed: 0.023 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: <7>
+     but: was <14>
+	at com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest.assertGloriousMovieKeyword(InvertedIndexMovieSearchServiceIntegrationTest.java:37)
+	at com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest.testFindSingleKeywordContainInTitle(InvertedIndexMovieSearchServiceIntegrationTest.java:26)
+
+testFullMovieNameMustMatchMovie(com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest)  Time elapsed: 0.013 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: <1>
+     but: was <2>
+	at com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest.testFullMovieNameMustMatchMovie(InvertedIndexMovieSearchServiceIntegrationTest.java:59)
+
+testMultiKeywordsCaseInsensitive(com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest)  Time elapsed: 0.008 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: <2>
+     but: was <4>
+	at com.wongnai.interview.movie.search.InvertedIndexMovieSearchServiceIntegrationTest.testMultiKeywordsCaseInsensitive(InvertedIndexMovieSearchServiceIntegrationTest.java:76)
+
